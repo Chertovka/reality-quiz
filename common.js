@@ -10,7 +10,7 @@ if (localStorage.getItem('quiz') === "passed"){
 let questionsAndAnswers;
 let questionsAndAnswersData = [];
 
-fetch("https://d-rusakov-wp.github.io/reality/questions-and-answers.json")
+fetch("https://Chertovka.github.io/reality-quiz/questions-and-answers.json")
 
 .then(response => {
 	return response.json();
@@ -28,7 +28,7 @@ fetch("https://d-rusakov-wp.github.io/reality/questions-and-answers.json")
 let coupons;
 let couponsData = [];
 
-fetch("https://d-rusakov-wp.github.io/reality/coupons.json")
+fetch("https://Chertovka.github.io/reality-quiz/coupons.json")
 
 .then(response => {
 	return response.json();
@@ -254,7 +254,7 @@ const displayResult = () => {
 
 	let valueFormName = document.querySelector(".form__name").value;
 
-	quizContent.insertAdjacentHTML("afterbegin", "<div class='total'><span class='total__score'>Вы набрали " + correctAnswers + " из 5</span><span class='total__title'>" + valueFormName + ", Ваш купон:</span><div class='total__coupon coupon'><span class='coupon__sale'>" + sale + "</span><b class='coupon__code'>" + coupon + "</b><svg class='coupon__pattern' width='100%' height='12'><defs><pattern id='coupon__dots' width='22' height='22' patternUnits='userSpaceOnUse'><circle cy='13' cx='9' r='7' fill='#FFFFFF' /></pattern></defs><rect width='100%' height='22px' fill='url(#coupon__dots)'/></svg></div></div>");
+	quizContent.insertAdjacentHTML("afterbegin", "<div class='total'><img style='border-radius:10px;background-color:#987631;margin-bottom:10px;' src='./test.gif' width='150' height='150' /><span class='total__score'>Вы набрали " + correctAnswers + " из 5</span><span class='total__title'>" + valueFormName + ", Ваш купон:</span><div class='total__coupon coupon'><span class='coupon__sale'>" + sale + "</span><b class='coupon__code'>" + coupon + "</b><svg class='coupon__pattern' width='100%' height='12'><defs><pattern id='coupon__dots' width='22' height='22' patternUnits='userSpaceOnUse'><circle cy='13' cx='9' r='7' fill='#FFFFFF' /></pattern></defs><rect width='100%' height='22px' fill='url(#coupon__dots)'/></svg></div></div>");
 
 	fetch(`https://api.telegram.org/bot7107876888:AAEEbojuBrx0MjG3CdrQY3K87oAI_5uWZU8/sendMessage?chat_id=917412386&parse_mode=html&text=Имя: ${valueFormName}%0AТелефон: +7 ${document.querySelector(".form__phone").value}%0AСкидка: ${sale.replace(' скидка', '')}`);
 
