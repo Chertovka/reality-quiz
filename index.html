@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="theme-color" content="#F8F4E8">
+		<meta name="description" content="">
+		<title></title>
+		<link rel="shortcut icon" href="./favicon.png">
+		<!-- critical css -->
+		<style>
+      html,body {
+        height: 100%;
+      }
+
+      body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 0;
+        font-family: "Comfortaa",sans-serif;
+        line-height: 1;
+        background-color: #757575;
+        background: -webkit-gradient(linear,left top, left bottom,from(#FFFFFF),to(#F8F4E8));
+        background: linear-gradient(to bottom,#FFFFFF,#F8F4E8);
+        overflow: hidden;
+      }
+
+      .card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: flex-end;
+        width: 100%;
+        height: 97%;
+        margin: 0 10px;
+        background-color: #FFFFFF;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 6px;
+        -webkit-box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.2),0 0 1rem rgba(0,0,0,0.2);
+        box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.2),0 0 1rem rgba(0,0,0,0.2);
+        overflow: hidden;
+      }
+
+      @media(min-width: 568px) {
+        .card {
+          width:400px;
+        }
+			}
+
+        @media(max-width: 320px) {
+          .card {
+            height:500px;
+          }
+				}
+		</style>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div class="message" data-notification-status="plain" role="alert" aria-live="assertive">
+			<svg class="message__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.691 301.691" fill="#FFFFFF"><g><polygon points="119.151,0 129.6,218.406 172.06,218.406 182.54,0"></polygon><rect x="130" y="261" width="40.525" height="40.523"></rect></g></svg>
+			<p class="message__content"></p>
+			<button class="message--close" aria-label="Закрыть сообщение"><svg fill="#757575" viewBox="0 0 15.642 15.642" width="15"><path d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061 c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061 l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541 l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path></svg></button>
+		</div>
+		<section class="card">
+			<div class="card__circle"></div>
+			<img class="card__logo" src="./logo.png" alt="Логотип">
+			<svg class="card__bend" viewBox="0 0 800 1000"><path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 1500 L 0 1000" stroke="none" fill="#FFFFFF"></path><path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" fill="none" stroke-width="5"></path></svg>
+			<div class="card__preview">
+				<h1 class="card__title">Викторина</h1>
+				<p class="card__info">Думаешь, что знаешь о&nbsp;свечах все или почти все?<br><br>Тогда предлагаем тебе сыграть в&nbsp;игру и&nbsp;проверить свои знания!<br>Регистрируйся для участия в&nbsp;викторине, правильно ответь на&nbsp;5&nbsp;вопросов и&nbsp;получи скидку&nbsp;11% на&nbsp;свечи.</p>
+				<!-- form -->
+				<form class="card__form form" method="post" action="">
+					<div class="form__field">
+						<input class="form__input form__name" id="name" type="text" required>
+						<label class="form__label" for="name">Имя</label>
+					</div>
+					<div class="form__field">
+						<span class="form__code">+7</span>
+						<input class="form__input form__phone" id="phone" type="tel" placeholder="(___) ___-__-__" required minlength="10">
+						<label class="form__label" for="phone"></label>
+					</div>
+				</form>
+				<button class="btn quiz__btn--start" type="submit">Начать</button>
+			</div>
+			<div class="card__content">
+				<!-- quiz -->
+				<div class="quiz">
+					<div class="quiz__content">
+						<div class="quiz__item">
+							<ul class="quiz__list">
+							</ul>
+						</div>
+					</div>
+					<div class="social social--hide">
+						<a class="social__link" href="https://vk.com/thatsidereality" target="_blank" rel="noopener" aria-label="Вконтакте">
+							<img class="social__img" src="./vk.svg" alt="" focusable="false" aria-hidden="true">
+						</a>
+						<a class="social__link" href="https://t.me/ThatSideReality" target="_blank" rel="noopener" aria-label="Telegram">
+							<img class="social__img" src="./telegram.svg" alt="" focusable="false" aria-hidden="true">
+						</a>
+					</div>
+					<div class="quiz__btns">
+						<button class="btn quiz__btn--prev" id="prev">Назад</button>
+						<button class="btn quiz__btn--next" id="next">Далее</button>
+					</div>
+				</div>
+			</div>
+			<div class="progress" id="progress"></div>
+		</section>
+		<script src="./imask.min.js"></script>
+		<script src="./common.js"></script>
+	</body>
+</html>
