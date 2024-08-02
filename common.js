@@ -5,8 +5,6 @@ if (localStorage.getItem('quiz') === "passed"){
 	cardPreview.style.margin = "0 0 200px 0";
 	cardPreview.style.fontSize = "32px";
 	cardPreview.style.textAlign = "center";
-
-	return;
 }
 
 let questionsAndAnswers;
